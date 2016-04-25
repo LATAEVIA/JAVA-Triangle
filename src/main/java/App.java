@@ -15,5 +15,21 @@ public class App {
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/rectangle", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      int side1 = Integer.parseInt(request.queryParams("side1"));
+      int side2 = Integer.parseInt(request.queryParams("side2"));
+      int side3 = Integer.parseInt(request.queryParams("side3"));
+
+      Triangle myTriangle = new Triangle(side1, side2, side3);
+
+      String textResultsFromTriangle_Java = myTriangle.triangleBuildResults();
+      model.put("myTriangle", myTriangle);
+      model.put("textResult", textResultsFromTriangle_Java);
+      model.put("template", "templates/result.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }

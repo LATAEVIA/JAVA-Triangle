@@ -59,4 +59,20 @@ public class Triangle {
       return false;
     }
   }
+
+  public String triangleBuildResults() {
+    if (mSide1 + mSide2 <= mSide3 ||
+        mSide3 + mSide2 <= mSide1 ||
+        mSide1 + mSide3 <= mSide2){
+      return "do not make a triangle, sorry";
+    } else {
+        if (isEquilateral()) {
+          return "make an equilateral triangle!";
+        } else if(isIsosceles()) {
+          return "make an isosceles triangle!";
+        } else {
+          return "make an scalene triangle!";
+        }
+      }
+    }
 }
