@@ -23,7 +23,9 @@ public class Triangle {
   }
 
   public boolean isATriangle() {
-    if (mSide1 + mSide2 <= mSide3 || mSide3 + mSide2 <= mSide1 || mSide1 + mSide3 <= mSide2){
+    if (mSide1 + mSide2 <= mSide3 ||
+        mSide3 + mSide2 <= mSide1 ||
+        mSide1 + mSide3 <= mSide2){
       return false;
     } else {
       return true;
@@ -38,11 +40,23 @@ public class Triangle {
     }
   }
 
-  // public boolean isATriangle() {
-  //   if (mSide1 + mSide2 <= mSide3 || mSide3 + mSide2 <= mSide1 || mSide1 + mSide3 <= mSide2){
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
+  public boolean isIsosceles() {
+    if ((mSide1 == mSide2 && mSide2 != mSide3 && mSide1 != mSide3) ||
+        (mSide1 == mSide3 && mSide2 != mSide3 && mSide1 != mSide2) ||
+        (mSide3 == mSide2 && mSide1 != mSide3 && mSide1 != mSide2)){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public boolean isScalene(){
+    if( mSide1 != mSide2 &&
+        mSide2 != mSide3 &&
+        mSide1 != mSide3){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
