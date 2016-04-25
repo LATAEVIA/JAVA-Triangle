@@ -18,8 +18,13 @@ public class AppTest extends FluentTest {
   public static ServerRule server = new ServerRule();
 
   @Test
-  public void rootTest() {
+  public void bananasBecauseFernandaSaidSo() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Triangle finder");
+    fill("#side1").with("3");
+    fill("#side2").with("5");
+    fill("#side3").with("3");
+    submit(".btn");
+    assertThat(pageSource()).contains("make an isosceles triangle!");
   }
+
 }

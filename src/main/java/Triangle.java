@@ -64,7 +64,7 @@ public class Triangle {
     if (mSide1 + mSide2 <= mSide3 ||
         mSide3 + mSide2 <= mSide1 ||
         mSide1 + mSide3 <= mSide2){
-      return "do not make a triangle, sorry";
+      return "do not make a triangle, sorry!";
     } else {
         if (isEquilateral()) {
           return "make an equilateral triangle!";
